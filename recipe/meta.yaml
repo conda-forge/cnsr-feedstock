@@ -14,7 +14,7 @@ build:
     - cnsr_copy_notebooks = cnsr.install:copy_notebooks
     - install_cnsr_launcher_data = cnsr.install:install_cnsr_launcher_data
   noarch: python
-  number: 0
+  number: 1
   script:
     - {{ PYTHON }} -m pip install . -vv
     - {{ PYTHON }} -m cnsr.install {{ PREFIX }}
@@ -56,6 +56,7 @@ test:
 app:
   summary: Lab Codes for CNSR, the neurophysiology core facility at Heidelberg University
   entry: jupyter lab
+  own_environment: True
 
 about:
   summary: Lab code package for the CNSR lab at Heidelberg University
